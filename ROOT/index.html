@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPSLS - The Ultimate Game</title>
+    <!-- Favicon -->
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+    <!-- Favicon -->
+    <!-- Font LATO CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+</head>
+<body>
+    <!-- The main content ... -->
+    <main>
+        <div class="dash-container">
+            <div id="dash">
+                <div id="score">
+                    <div class="score-part" id="playerScoreSection">
+                        <img src="Images/player.png" alt="player" class="player-image">
+                        <div class="player-score-box">0</div>
+                    </div>
+                    <div class="score-part" id="roundResultsSection">
+                        <span id="roundNumber"></span>
+                        <span id="roundResult"></span>
+                        <span class="dot" style="animation-delay: 0s;">.</span>
+                        <span class="dot" style="animation-delay: 0.2s;">.</span>
+                        <span class="dot" style="animation-delay: 0.4s;">.</span>
+                    </div>
+                    <div class="score-part" id="computerScoreSection">
+                        <img src="Images/computer.png" alt="computer" class="computer-image">
+                        <div class="computer-score-box">0</div>
+                    </div>
+                </div>
+                <div id="hands">
+                    <div class="hand-column" id="playerHand">
+                        <!-- Initial image for the animation -->
+                        <img src="Images/pstatushand.png" alt="Status Hand" id="playerHandImage">
+                    </div>
+                    <div class="hand-column" id="status">
+                        <div id="timer">
+                            <div class="text-container">
+                                <span class="time">sec</span>
+                                <div class="description">until the end of the choice</div>
+                            </div>
+                        </div>
+                        <div id="statusInfo">
+                            <img src="Images/vs.png" alt="VS" class="status-image">
+                        </div>
+                    </div>
+                    <div class="hand-column" id="computerHand">
+                        <!-- Initial image for the animation -->
+                        <img src="Images/cstatushand.png" alt="Status Hand" id="computerHandImage">
+                    </div>
+                </div>
+                <div id="choice">
+                    <div class="choice-column" id="playerChoice">
+                        <p id="selectHandText">
+                            select a hand<span class="dot">.</span><span class="dot" style="animation-delay: 0.3s;">.</span><span class="dot" style="animation-delay: 0.6s;">.</span>
+                        </p>
+                        <div class="icons-row">
+                          <div class="icon" data-default="Images/rock.png" data-hover="Images/rockhover.png" data-hand-image="Images/prockhand.png" data-hand="rock" style="background-image: url('Images/rock.png');"></div>
+                          <div class="icon" data-default="Images/paper.png" data-hover="Images/paperhover.png" data-hand-image="Images/ppaperhand.png" data-hand="paper" style="background-image: url('Images/paper.png');"></div>
+                          <div class="icon" data-default="Images/scissors.png" data-hover="Images/scissorshover.png" data-hand-image="Images/pscissorshand.png" data-hand="scissors" style="background-image: url('Images/scissors.png');"></div>
+                          <div class="icon" data-default="Images/lizard.png" data-hover="Images/lizardhover.png" data-hand-image="Images/plizardhand.png" data-hand="lizard" style="background-image: url('Images/lizard.png');"></div>
+                          <div class="icon" data-default="Images/spock.png" data-hover="Images/spockhover.png" data-hand-image="Images/pspockhand.png" data-hand="spock" style="background-image: url('Images/spock.png');"></div>
+                      </div>
+                    </div>
+                    <div class="choice-column" id="computerChoice">
+                        <span>computer is choosing a hand<span class="dot">.</span><span class="dot" style="animation-delay: 0.2s;">.</span><span class="dot" style="animation-delay: 0.4s;">.</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- /////////////////////////////////////////////////////// -->
+
+
+<script>
+    let timerInterval; // Declare timerInterval globally
+    let totalRounds = 10; // Change the total number of rounds
+    let round = 1; // Start the game at round 1
+
+    // Function to start the timer countdown
+    function startTimer() {
+        let currentTime = 10;
+        clearInterval(timerInterval); // Clear previous interval to avoid multiple timers running simultaneously
+
+        function updateTimerDisplay() {
+            currentTime--;
+            if (currentTime <= 0) {
+                clearInterval(timerInterval); // Stop the timer when it reaches zero
+            }
+        }
+
+        // Update the timer display every second
+        timerInterval = setInterval(updateTimerDisplay, 1000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        let roundNumberElement = document.getElementById('roundNumber');
+        let playerScore = 0;
+        let computerScore = 0;
+        let playerChoice;
+        let computerChoice;
+        let winner;
+
+        function updateRoundNumber() {
+            roundNumberElement.textContent = 'ROUND ' + round;
+            console.log('Current Round:', round)
+        }
+
+        function resetGame() {
+            playerScore = 0;
+            computerScore = 0;
+            round = 1; // Reset round to 1 when starting a new game
+            updateRoundNumber();
+            updateScores();
+            initializePlayerChoice();
+            initializeBotLogic();
+            startTimer(); // Start the timer for the first round after resetting the game
+        }
+
+        function updateScores() {
+            document.querySelector('.player-score-box').textContent = playerScore;
+            document.querySelector('.computer-score-box').textContent = computerScore;
+        }
+
+        function displayRoundResult(winner) {
+            // Display round result
+            let roundResultElement = document.getElementById('roundResult');
+            roundResultElement.textContent = `Player: ${playerChoice}, Computer: ${computerChoice}, Winner: ${winner}`;
+
+            // Update the UI with player and computer choices
+            // Implement this part as per your HTML structure
+
+            if (round <= totalRounds) { // Changed to include the last round
+                // If not last round, play next round
+                playNextRound();
+            } else {
+                // If last round, end game
+                endGame();
+            }
+        }
+
+        function playRound() {
+            // Get choices
+            const playerChoice = getPlayerChoice();
+            const computerChoice = getComputerChoice();
+
+            // Play game with choices
+            const winner = determineWinner(playerChoice, computerChoice);
+
+            displayRoundResult(winner);
+
+            // Reset round-specific variables for new round 
+            resetRound(); // Reset round variables at the end of each round
+
+            // Restart timer for new round
+            startTimer();
+        }
+
+        function resetRound() {
+            // Reset round-specific variables
+            playerChoice = null;
+            computerChoice = null;
+            winner = null;
+        }
+
+        function playNextRound() {
+            // Start new round
+            round++;
+            updateRoundNumber(); // Call after incrementing
+            console.log("New round", round);
+            setTimeout(() => {
+                playRound();
+            }, 2000);
+        }
+
+        function endGame() {
+            console.log('Game Over');
+            // You can add additional actions here such as displaying a message to the user
+        }
+
+        resetGame(); // Start the game
+    });
+</script>
+    
+
+<!-- player choice -->
+<script>
+    function initializePlayerChoice() {
+        document.addEventListener('DOMContentLoaded', function() {
+            let initialTime = 10; // Reduced initial time by 5 seconds
+            let currentTime = initialTime;
+            let animationInProgress = false;
+
+            const timerElement = document.querySelector('.time');
+            const textContainer = document.querySelector('.text-container');
+
+            function updateTimerDisplay(time) {
+                timerElement.textContent = time + ' sec';
+                textContainer.style.opacity = time > 0 ? "1" : "0";
+            }
+
+            function performSelectionAnimation() {
+                if (!animationInProgress) {
+                    animationInProgress = true;
+                    let playerHandImage = document.getElementById('playerHandImage');
+                    let selectedIcon = document.querySelector('.icon.selected');
+                    if (playerHandImage && selectedIcon) {
+                        setTimeout(() => {
+                            playerHandImage.classList.add('bounce-animation');
+                            let animationEndHandler = function handler() {
+                                let newHandImageSrc = selectedIcon.getAttribute('data-hand-image');
+                                playerHandImage.src = newHandImageSrc;
+                                playerHandImage.classList.remove('bounce-animation');
+                                animationInProgress = false;
+                                playerHandImage.removeEventListener('animationend', animationEndHandler);
+                            };
+                            playerHandImage.addEventListener('animationend', animationEndHandler);
+                        }, 2000); // Unchanged delay for animation launch
+                    } else {
+                        animationInProgress = false;
+                    }
+                }
+            }
+
+            function countdown() {
+                updateTimerDisplay(currentTime);
+
+                if (currentTime <= 0) {
+                    textContainer.style.opacity = "0";
+
+                    setTimeout(() => {
+                        if (document.querySelector('.icon.selected')) {
+                            performSelectionAnimation();
+                        }
+
+                        clearInterval(timerInterval);
+                    }, 1000);
+                } else {
+                    currentTime--;
+                }
+            }
+
+            const timerInterval = setInterval(countdown, 1000);
+
+            let selectionInProgress = false;
+
+            function selectPlayer(icon) {
+                if (!animationInProgress) {
+                    document.querySelectorAll('.icon').forEach(function(otherIcon) {
+                        otherIcon.classList.remove('selected');
+                        otherIcon.style.backgroundImage = "url('" + otherIcon.getAttribute('data-default') + "')";
+                    });
+                    icon.classList.add('selected');
+                    icon.style.backgroundImage = "url('" + icon.getAttribute('data-hover') + "')";
+                    document.getElementById('selectHandText').classList.add('invisible');
+                }
+            }
+
+            function handleMouseOver() {
+                this.style.backgroundImage = "url('" + this.getAttribute('data-hover') + "')";
+            }
+
+            function handleMouseOut() {
+                if (!this.classList.contains('selected')) {
+                    this.style.backgroundImage = "url('" + this.getAttribute('data-default') + "')";
+                }
+            }
+
+            function handleClick() {
+                const playerChoice = this.getAttribute('data-hand');
+                selectPlayer(this);
+            }
+
+            function addEventListeners() {
+                document.querySelectorAll('.icon').forEach(function(icon) {
+                    icon.addEventListener('mouseover', handleMouseOver);
+                    icon.addEventListener('mouseout', handleMouseOut);
+                    icon.addEventListener('click', handleClick);
+                });
+            }
+
+            addEventListeners();
+
+            function removeEventListeners() {
+                document.querySelectorAll('.icon').forEach(function(icon) {
+                    icon.removeEventListener('mouseover', handleMouseOver);
+                    icon.removeEventListener('mouseout', handleMouseOut);
+                    icon.removeEventListener('click', handleClick);
+                });
+            }
+
+            function cleanupEventListeners() {
+                removeEventListeners();
+            }
+        });
+
+        function getPlayerChoice() {
+            let selectedIcon = document.querySelector('.icon.selected');
+            if (selectedIcon) {
+                const selectedHand = selectedIcon.getAttribute('data-hand');
+                console.log("Player Chose: ", selectedHand);
+                return selectedHand;
+            }
+        }
+    }
+
+    // Call the function to initialize player choice
+    initializePlayerChoice();
+</script>
+  
+
+
+
+<!-- Selection prompt remove -->
+<script src="static/js/selection_prompt.js"></script>
+
+<!-- hides computer is making a choice --// SOMETHING IS WRONG WITH THIS -->
+<script src="static/js/auto_player_selection.js"></script>
+
+<!-- hides computer is making a choice -->
+<script src="static/js/computer_textchoice.js"></script>
+
+<!-- hides vs until game time -->
+<script src="static/js/vs_image.js"></script>
+
+
+
+<!-- GAME LOGIC -->
+<script>
+    function initializeBotLogic() {
+        // Define animationInProgress as a global variable
+        let animationInProgress = false;
+
+        // Define a DOM event listener for the "DOMContentLoaded" event
+        document.addEventListener('DOMContentLoaded', function documentReadyListener() {
+            const computerHandImage = document.getElementById('computerHandImage');
+            const hands = ['rock', 'paper', 'scissors', 'lizard', 'spock']; // Update with correct hand choices
+            const handImages = {
+                'rock': 'Images/crockhand.png',
+                'paper': 'Images/cpaperhand.png',
+                'scissors': 'Images/cscissorshand.png',
+                'lizard': 'Images/clizardhand.png',
+                'spock': 'Images/cspockhand.png'
+            };
+
+            // Updated function to include countdown and computer hand selection
+            function playComputerHand() {
+                return new Promise((resolve) => { // Ensure the function returns a Promise
+                    let currentTime = 10;
+                    let computerHandChosen = false; // Flag to track if computer's hand has been chosen
+
+                    // Countdown function
+                    function countdown() {
+                        const timerInterval = setInterval(() => {
+                            if (currentTime <= 0 && !computerHandChosen) {
+                                clearInterval(timerInterval); // Stop subsequent timers
+                                computerHandChosen = true; // Set flag to indicate computer's hand has been chosen
+
+                                // Select a random hand for the computer
+                                const randomIndex = Math.floor(Math.random() * hands.length);
+                                const selectedHand = hands[randomIndex];
+                                computerSelectedHand = selectedHand; // Assigning the selected hand to computerSelectedHand
+
+                                // Change the src attribute of the computer hand image to the status hand
+                                computerHandImage.src = 'Images/cstatushand.png';
+
+                                // Trigger animation after a 2-second delay
+                                setTimeout(() => {
+                                    // Trigger animation
+                                    computerHandImage.classList.add('computer-hand-animation');
+
+                                    // After animation, show selected hand
+                                    computerHandImage.addEventListener('animationend', function handler() {
+                                        const selectedImage = handImages[computerSelectedHand];
+                                        if (selectedImage) {
+                                            computerHandImage.src = selectedImage;
+                                            console.log("Computer Chose:", computerSelectedHand); // Log selected hand
+                                        }
+
+                                        // Remove animation class
+                                        computerHandImage.classList.remove('computer-hand-animation');
+
+                                        // Resolve the Promise with the selected hand
+                                        resolve(computerSelectedHand);
+
+                                        // Remove event listener to avoid memory leaks
+                                        computerHandImage.removeEventListener('animationend', handler);
+                                    });
+                                }, 3000); // 2-second delay
+
+                            } else {
+                                currentTime--;
+                            }
+                        }, 1000);
+                    }
+
+                    // Start the countdown timer
+                    countdown();
+                });
+            }
+
+            // Call the function to get the computer's choice
+            playComputerHand().then((computerSelectedHand) => {
+                // Get the player's choice
+                const playerChoice = getPlayerChoice();
+
+                // Pass both player's and computer's choices to the playGame function
+                playGame(playerChoice, computerSelectedHand);
+            });
+
+            // Function to get the player's choice
+            function getPlayerChoice() {
+                // Get the selected icon element
+                let selectedIcon = document.querySelector('.icon.selected');
+                if (selectedIcon) {
+                    // Retrieve the hand represented by the selected icon
+                    const selectedHand = selectedIcon.getAttribute('data-hand');
+                    console.log("Player Chose: ", selectedHand);
+                    return selectedHand;
+                }
+            }
+
+        });
+    }
+
+    // Call the function to initialize the bot logic
+    initializeBotLogic();
+</script>
+
+
+<!-- displays round winner and scoreboard -->
+<script>
+    let playerScore = 0;
+    let computerScore = 0;
+    let currentRound = 1;
+
+    function determineWinner(playerChoice, computerSelectedHand) {
+        const winningHands = {
+            'rock': ['scissors', 'lizard'],
+            'paper': ['rock', 'spock'],
+            'scissors': ['paper', 'lizard'],
+            'lizard': ['paper', 'spock'],
+            'spock': ['scissors', 'rock']
+        };
+
+        if (winningHands[playerChoice].includes(computerSelectedHand)) {
+            return { winner: 'Player', description: `${playerChoice} beats ${computerSelectedHand}` };
+        } else if (winningHands[computerSelectedHand].includes(playerChoice)) {
+            return { winner: 'Computer', description: `${computerSelectedHand} beats ${playerChoice}` };
+        } else {
+            return { winner: 'Draw', description: "It's a draw!" };
+        }
+    }
+
+    function updateScore(winner) {
+        if (winner === 'Player') {
+            playerScore++;
+        } else if (winner === 'Computer') {
+            computerScore++;
+        }
+        // Log the winner or draw right before updating the score
+        console.log(`Round ${currentRound} Winner: ${winner}`);
+        updateScoresDisplay();
+    }
+
+    function announceRoundWinner(playerChoice, computerSelectedHand) {
+        const { winner, description } = determineWinner(playerChoice, computerSelectedHand);
+        displayRoundResult(description, winner);
+    }
+
+    function displayRoundResult(description, winner) {
+        let roundResultElement = document.getElementById('roundResult');
+        let roundNumberElement = document.getElementById('roundNumber');
+        roundNumberElement.style.display = 'none'; // Immediately hide the round number
+
+        roundResultElement.textContent = description; // Display the round result
+
+        setTimeout(() => {
+            if (winner !== 'Draw') {
+                roundResultElement.textContent = `ROUND WINNER: ${winner}`;
+            } else {
+                roundResultElement.textContent = description; // Keeps showing "It's a draw!"
+            }
+
+            updateScore(winner); // Update the score after announcing the winner
+
+            setTimeout(() => {
+                roundResultElement.textContent = ''; // Clear the result after some time, preparing for next actions
+            }, 3000); // Adjust this timeout as needed
+        }, 3000); // Adjust this delay based on your animation or desired timing
+    }
+
+    function updateScoresDisplay() {
+        document.querySelector('.player-score-box').textContent = playerScore;
+        document.querySelector('.computer-score-box').textContent = computerScore;
+    }
+
+    function playGame(playerChoice, computerSelectedHand) {
+        announceRoundWinner(playerChoice, computerSelectedHand);
+    }
+
+    function playNextRound() {
+        round++;
+        updateRoundNumber(); // Update UI with the new round number
+        console.log("New round", round);
+        setTimeout(() => {
+            // Assuming playRound initiates the gameplay for the new round
+            // playRound(); // Make sure to implement or adjust this function according to your game logic
+        }, 2000);
+    }
+
+</script>
+
+
+
+
+<!-- /////////////////////////////////////////////////////// -->
+    <!-- Your existing footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="URL_FOR_PLAY" target="_blank">
+                <img src="Images/play.png" alt="Rock Paper Scissors Lizard Spock Rules" class="footer-img">
+            </a>
+            <a href="URL_FOR_SEND" target="_blank">
+                <img src="Images/send.png" alt="Send to a Friend" class="footer-img">
+            </a>
+            <a href="URL_FOR_ABOUT" target="_blank">
+                <img src="Images/about.png" alt="About the Creators" class="footer-img">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
