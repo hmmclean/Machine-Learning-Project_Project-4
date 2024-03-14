@@ -1,0 +1,374 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('../../Images/background1.jpg'); /* Updated relative path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+a:-webkit-any-link {
+  text-decoration: none !important; /* Change text decoration */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* Main Content Styles */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////*/
+
+
+
+/* dash Styles */
+.dash-container {
+  position: relative;
+  padding: 5px; /* This padding acts as the space for the gradient background around #dash */
+  border-radius: 25px; /* Rounded corners for the gradient background */
+  overflow: hidden; /* Ensures the gradient respects the border-radius */
+  width: 60%; /* Adjust width as needed */
+  height: 79vh; /* Adjust height as needed */
+  margin: 0 auto; /* Center the container if needed */
+}
+
+.dash-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #FFFFFF, #B4BBDF, #7BBCC6, #6073B7, #465FAB); /* Gradient background */
+  z-index: -1; /* Place it behind the #dash content */
+  border-radius: 25px; /* Match the parent container's border-radius */
+}
+
+#dash {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../Images/dashboard.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+/* Adjusted section styles */
+.section {
+  text-align: center;
+  margin: 0px 0; /* Adjusts spacing between sections vertically */
+  padding: 0px;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/*////////////////////////////////////////////////////////////////////////*/
+
+#score {
+  display: flex; /* Aligns children side by side */
+  height: 16.25vh; /* Keep as is to fill the parent's height */
+  padding: 0px; /* Padding around the score section */
+}
+
+.score-part {
+  flex: 1; /* Allows each column to take equal space */
+  display: flex; /* Enables flexbox for content alignment */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  text-align: center;
+  margin: 0px; /* Adjusts spacing between columns */
+  height: 100%; /* Ensures each section fills the full height of the #score container */
+}
+
+/* Specific styles for Player Score Section */
+#playerScoreSection {
+  display: flex; /* This might already be set by your current styles */
+  flex-direction: column; /* Align children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center content vertically, if needed */
+  width: 100%; /* Adjust based on your layout needs */
+  flex: .5; /* Adjust this value to change the width as needed */
+}
+
+#playerScoreSection .player-image {
+  max-width: 60%; /* Ensures the image is not wider than the container */
+  height: auto; /* Maintains the aspect ratio */
+  margin-bottom: 10px; /* Space between the image and whatever is below */
+}
+
+.player-score-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 45%;
+  padding-bottom: 2px; /* Adjust as needed */
+  border: 2px solid #616b8a;
+  margin-top: 8px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #FFFFFF;
+  box-sizing: border-box; /* Ensures padding does not add to the box's width */
+}
+
+/* Specific styles for Round Results Section - it takes the remaining space */
+#roundResultsSection {
+  flex: 2; /* This section will take up more space. Adjust the value to control how much space it takes relative to the others */
+  font-weight: bold; /* Makes the time more prominent */
+  color: #5C67AF;
+  font-size: 40px;
+}
+
+/* Specific styles for Computer Score Section */
+#computerScoreSection {
+  display: flex; /* This might already be set by your current styles */
+  flex-direction: column; /* Align children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center content vertically, if needed */
+  width: 100%; /* Adjust based on your layout needs */
+  flex: .5; /* Adjust this value to change the width as needed *//
+}
+
+#computerScoreSection .computer-image {
+  max-width: 60%; /* Ensures the image is not wider than the container */
+  height: auto; /* Maintains the aspect ratio */
+  margin-bottom: 10px; /* Space between the image and whatever is below */
+}
+
+.computer-score-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 45%;
+  padding-bottom: 2px; /* Adjust as needed */
+  border: 2px solid #616b8a;
+  margin-top: 8px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #FFFFFF;
+  box-sizing: border-box; /* Ensures padding does not add to the box's width */
+}
+
+/*////////////////////////////////////////////////////////////////////////*/
+
+#hands {
+  display: flex; /* Aligns children side by side as columns */
+  justify-content: space-around; /* Distributes space evenly between the columns */
+  align-items: stretch; /* Stretches items to fill the container vertically */
+  height: 40.25vh; /* Keep as is to fill the parent's height */; /* Adjust this based on your design needs */
+}
+
+.hand-column {
+  flex: 1;  /* Allows each column to take equal space */
+  display: flex; /* Enables flexbox for content alignment */
+  flex-direction: column; /* Aligns content vertically within each column */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  text-align: center;
+  margin: 0px; /* Adjusts spacing between columns */
+  padding: 0px; /* Padding inside each column for content spacing */
+}
+
+/* Additional specific styles for player, status, and computer, if needed */
+#playerHand {
+  flex: 1.85;
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+@keyframes swingAndChange {
+  14.25% { transform: rotate(-20deg); opacity: 1; }
+  28.75% { transform: rotate(0deg); }
+  53.25% { transform: rotate(-20deg); }
+  70.25% { transform: rotate(0deg); opacity: 1; } /* Immediately show after changing the image */
+  99.75% { transform: rotate(-20deg); }
+}
+
+.bounce-animation {
+  transform-origin: bottom left;
+  animation: swingAndChange 1.5s ease-in-out forwards; /* Prevents the animation from resetting */
+}
+
+#status {
+  position: relative; /* Establishes a positioning context for its children */
+}
+
+#timer {
+  position: absolute; /* Removes #timer from the normal document flow */
+  top: 0; /* Aligns #timer to the top of #status */
+  width: 100%; /* Ensures #timer spans the full width of its parent */
+  padding-top: 20px; /* Adds padding around the content */
+}
+
+.text-container {
+  text-align: center; /* Centers the text within .text-container */
+}
+
+.time {
+  font-weight: bold; /* Makes the time more prominent */
+  color: white;
+  font-size: 45px;
+}
+
+.description {
+  font-size: 18px; /* Smaller font size for the description */
+  color: #5C67AF;
+}
+
+#statusInfo {
+  display: flex; /* Use flexbox for easy centering */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 100px; /* Adjust height as needed to fit the box */
+  width: 100%; /* Adjust width as needed, or set to a fixed value */
+  overflow: hidden; /* Prevents any part of the image from "hovering" outside */
+  transform: translateY(30px); /* Adjust the value as needed */
+}
+
+.status-image {
+  max-height: 65%; /* Ensure the image doesn't exceed the container's height */
+  max-width: 65%; /* Ensure the image doesn't exceed the container's width */
+}
+
+
+#computerHand {
+  flex: 1.85;
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+@keyframes computerHandAnimation {
+  14.25% { transform: rotate(20deg); opacity: 1; }
+  28.75% { transform: rotate(0deg); }
+  53.25% { transform: rotate(20deg); }
+  70.25% { transform: rotate(0deg); opacity: 1; } /* Immediately show after changing the image */
+  99.75% { transform: rotate(20deg); }
+}
+
+.computer-hand-animation {
+  transform-origin: bottom right;
+  animation: computerHandAnimation 1.5s ease-in-out forwards; /* Prevents the animation from resetting */
+}
+
+/*////////////////////////////////////////////////////////////////////////*/
+
+#choice {
+  display: flex; /* Makes #choice a flex container */
+  flex-grow: 1; /* As previously defined, for growth behavior */
+  height: 6.5vh; /* Maintains your specified height */
+}
+
+.choice-column {
+  flex: 1; /* Allows each column to take equal space */
+  display: flex; /* Enables flexbox for content alignment */
+  padding: 10px; /* Adds some padding within each column for spacing */
+  height: 100%; /* Ensures columns fill the #choice container vertically */
+  flex-direction: column;
+  align-items: center;
+  color: white; /* Sets the text color to white */
+}
+
+.choice-column p {
+  font-size: 20px; /* Adjusted font size */
+  letter-spacing: .25px; /* Adjusted letter spacing */
+  padding: 10px; /* Adds padding around the text inside the <p> tag */
+  margin: 0 0 8px 0; /* Adds margin below the <p> tag, adjust as needed */
+  /* Use margin: 10px 0; for equal top and bottom margins */
+}
+
+.invisible {
+  opacity: 0;
+  pointer-events: none; /* Prevents clicking/interactions when element is fully transparent */
+}
+
+#playerChoice {
+  flex: .5;
+  text-align: left;
+}
+
+.icons-row {
+  display: flex; /* This line aligns the icons horizontally */
+  justify-content: center; /* This centers the icons in the container */
+  flex-wrap: wrap; /* Allows icons to wrap if the container is too narrow */
+  padding-left: 0px;
+  
+}
+
+.icon {
+  width: 90px;
+  height: 115px;
+  background-size: cover;
+  display: block; /* This makes each icon appear on a new line within the flex container */
+  cursor: pointer;
+  margin: 0px 10px 8px 0px; 
+}
+
+
+#computerChoice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.5;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: .25px;
+  height: 100%;
+}
+
+/*////////////////////////////////////////////////////////////////////////*/
+
+.dot {
+  display: inline-block; /* This keeps the dot inline with the text */
+  opacity: 0; /* Start with dot invisible */
+  animation: dotBlink 1.4s infinite;
+}
+
+.dot-reverse {
+  display: inline-block;
+  opacity: 0;
+  animation: dotBlinkReverse 1.4s infinite;
+}
+
+@keyframes dotBlink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes dotBlinkReverse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/*////////////////////////////////////////////////////////////////////////*/
+
+/* Footer Styles */
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.footer-img {
+  margin-right: 20px; /* Adjusts space to the right of each image */
+  position: relative;
+  top: -30px; /* Moves images up */
+  right: -30px; /* Moves images to the right */
+}
