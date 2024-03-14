@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPSLS - The Ultimate Game</title>
+    <!-- Favicon -->
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+    <!-- Favicon -->
+    <!-- Font LATO CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+</head>
+<body>
+    <!-- The main content ... -->
+    <main>
+        <div class="dash-container">
+            <div id="about">
+                <div id="aboutHeader">
+                    <div class="about-title" id="aboutTitle">
+                        <div class="aboutImage"><img src="Images/gamemakers.png" alt="How It's Played"></div>
+                    </div>
+                </div>
+                <div id="aboutDescription" class="about-content">
+                    <div class="about-column" id="aboutText">
+                        <p>This site is a collaborative effort between the masterminds of:</p>
+                        <ul>
+                            <li>Haylee&nbsp;&nbsp;<b>("Den Mother")</b>&nbsp;&nbsp;McLean</li>
+                            <li>Quentin&nbsp;&nbsp;<b>("Q, Qbicle")</b>&nbsp;&nbsp;O'Neal</li>
+                            <li>Tia&nbsp;&nbsp;<b>("CSS Lover")</b>&nbsp;&nbsp;Scott</li>
+                        </ul>
+                        <p>Graduates of the <b>2024 UNC Data Analytics Bootcamp.</b></p>
+                    </div>
+                    <div class="about-column" id="imageThumb">
+                        <img src="Images/thumbsup.png" alt="thumbs up">
+                    </div>
+                    <div class="about-column" id="aboutButton">
+                        <a href="../ROOT/index.html" id="aboutButtonId">BACK TO GAME</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <!-- Popup Container -->
+<div id="popupContainer" class="popup-container">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <img src="Images/logo.png" alt="Image Description"><br><br>
+        <img src="Images/friends.png" alt="play">
+        <form action="mailto:recipient@example.com" method="post" enctype="text/plain">
+            <label for="senderName">Your Name:</label><br>
+            <input type="text" id="senderName" name="senderName" required><br>
+            <label for="senderEmail">Your Email:</label><br>
+            <input type="email" id="senderEmail" name="senderEmail" required><br>
+            <label for="recipientEmail">Friend's Email:</label><br>
+            <input type="email" id="recipientEmail" name="recipientEmail" required><br>
+            <input type="submit" value="SEND">
+        </form>
+    </div>
+</div>
+
+    <!-- /////////////////////////////////////////////////////// -->
+    
+    <script>
+        // Function to show the pop-up
+        function showPopup() {
+            document.getElementById('popupContainer').style.display = 'block';
+        }
+        
+        // Function to close the pop-up
+        function closePopup() {
+            document.getElementById('popupContainer').style.display = 'none';
+        }
+        
+        </script>
+
+    <!-- /////////////////////////////////////////////////////// -->
+    <!-- Your existing footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="../ROOT/rules.html">
+                <img src="Images/play.png" alt="Rock Paper Scissors Lizard Spock Rules" class="footer-img">
+            </a>
+            <a href="#" onclick="showPopup()">
+                <img src="Images/send.png" alt="Send to a Friend" class="footer-img">
+            </a>
+            <a href="../ROOT/about.html">
+                <img src="Images/about.png" alt="About the Creators" class="footer-img">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

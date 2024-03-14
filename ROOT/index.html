@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPSLS - The Ultimate Game</title>
+    <!-- Favicon -->
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+    <!-- Favicon -->
+    <!-- Font LATO CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+</head>
+<body>
+    <!-- The main content ... -->
+    <main>
+        <div class="dash-container">
+            <div id="dash">
+                <div id="score">
+                    <div class="score-part" id="playerScoreSection">
+                        <img src="Images/player.png" alt="player" class="player-image">
+                        <div class="player-score-box">0</div>
+                    </div>
+                    <div class="score-part" id="roundResultsSection">
+                        <span id="roundNumber"></span>
+                        <span id="roundResult"></span>
+                        <span class="dot" style="animation-delay: 0s;">.</span>
+                        <span class="dot" style="animation-delay: 0.2s;">.</span>
+                        <span class="dot" style="animation-delay: 0.4s;">.</span>
+                    </div>
+                    <div class="score-part" id="computerScoreSection">
+                        <img src="Images/computer.png" alt="computer" class="computer-image">
+                        <div class="computer-score-box">0</div>
+                    </div>
+                </div>
+                <div id="hands">
+                    <div class="hand-column" id="playerHand">
+                        <!-- Initial image for the animation -->
+                        <img src="Images/pstatushand.png" alt="Status Hand" id="playerHandImage">
+                    </div>
+                    <div class="hand-column" id="status">
+                        <div id="timer">
+                            <div class="text-container">
+                                <span class="time">sec</span>
+                                <div class="description">until the end of the choice</div>
+                            </div>
+                        </div>
+                        <div id="statusInfo">
+                            <img src="Images/vs.png" alt="VS" class="status-image">
+                        </div>
+                    </div>
+                    <div class="hand-column" id="computerHand">
+                        <!-- Initial image for the animation -->
+                        <img src="Images/cstatushand.png" alt="Status Hand" id="computerHandImage">
+                    </div>
+                </div>
+                <div id="choice">
+                    <div class="choice-column" id="playerChoice">
+                        <p id="selectHandText">
+                            select a hand<span class="dot">.</span><span class="dot" style="animation-delay: 0.3s;">.</span><span class="dot" style="animation-delay: 0.6s;">.</span>
+                        </p>
+                        <div class="icons-row">
+                          <div class="icon" data-default="Images/rock.png" data-hover="Images/rockhover.png" data-hand-image="Images/prockhand.png" data-hand="rock" style="background-image: url('Images/rock.png');"></div>
+                          <div class="icon" data-default="Images/paper.png" data-hover="Images/paperhover.png" data-hand-image="Images/ppaperhand.png" data-hand="paper" style="background-image: url('Images/paper.png');"></div>
+                          <div class="icon" data-default="Images/scissors.png" data-hover="Images/scissorshover.png" data-hand-image="Images/pscissorshand.png" data-hand="scissors" style="background-image: url('Images/scissors.png');"></div>
+                          <div class="icon" data-default="Images/lizard.png" data-hover="Images/lizardhover.png" data-hand-image="Images/plizardhand.png" data-hand="lizard" style="background-image: url('Images/lizard.png');"></div>
+                          <div class="icon" data-default="Images/spock.png" data-hover="Images/spockhover.png" data-hand-image="Images/pspockhand.png" data-hand="spock" style="background-image: url('Images/spock.png');"></div>
+                      </div>
+                    </div>
+                    <div class="choice-column" id="computerChoice">
+                        <span>computer is choosing a hand<span class="dot">.</span><span class="dot" style="animation-delay: 0.2s;">.</span><span class="dot" style="animation-delay: 0.4s;">.</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+<!-- Popup Container -->
+<div id="popupContainer" class="popup-container">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <img src="Images/logo.png" alt="Image Description"><br><br>
+        <img src="Images/friends.png" alt="play">
+        <form action="mailto:recipient@example.com" method="post" enctype="text/plain">
+            <label for="senderName">Your Name:</label><br>
+            <input type="text" id="senderName" name="senderName" required><br>
+            <label for="senderEmail">Your Email:</label><br>
+            <input type="email" id="senderEmail" name="senderEmail" required><br>
+            <label for="recipientEmail">Friend's Email:</label><br>
+            <input type="email" id="recipientEmail" name="recipientEmail" required><br>
+            <input type="submit" value="SEND">
+        </form>
+    </div>
+</div>
+    <!-- /////////////////////////////////////////////////////// -->
+
+
+
+
+<!-- UNIQUE GAME ID -->
+<script src="static/js/game_id.js"></script>
+
+<!-- Game Functions -->
+<script>
+  let timerInterval; // Declare timerInterval globally
+  let totalRounds = 10; // Change the total number of rounds
+  let round = 1; // Start the game at round 1
+
+  // Function to start the timer countdown
+  function startTimer() {
+    let currentTime = 10;
+    clearInterval(timerInterval); // Clear previous interval to avoid multiple timers running simultaneously
+
+    function updateTimerDisplay() {
+      currentTime--;
+      if (currentTime <= 0) {
+        clearInterval(timerInterval); // Stop the timer when it reaches zero
+      }
+    }
+
+    // Update the timer display every second
+    timerInterval = setInterval(updateTimerDisplay, 1000);
+  }
+
+  let roundNumberElement = document.getElementById("roundNumber");
+  let playerScore = 0;
+  let computerScore = 0;
+  let playerChoice;
+  let computerChoice;
+  let winner;
+
+  function updateRoundNumber() {
+    roundNumberElement.textContent = "ROUND " + round;
+    console.log("Round:", round);
+  }
+
+  function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    round = 1; // Reset round to 1 when starting a new game
+    updateRoundNumber();
+    updateScores();
+    initializePlayerChoice();
+    initializeBotLogic();
+    startTimer(); // Start the timer for the first round after resetting the game
+  }
+
+  function updateScores() {
+    document.querySelector(".player-score-box").textContent = playerScore;
+    document.querySelector(".computer-score-box").textContent =
+      computerScore;
+  }
+
+  function displayRoundResult(winner) {
+    // Display round result
+    let roundResultElement = document.getElementById("roundResult");
+    roundResultElement.textContent = `Player: ${playerChoice}, Computer: ${computerChoice}, Winner: ${winner}`;
+  }
+
+  function playRound() {
+    // Reset round-specific variables for new round
+    resetRound(); // Reset round variables at the end of each round
+    initializePlayerChoice();
+    initializeBotLogic();
+    playerPrompt();
+    computerChoiceText();
+
+    // Start the timer
+    startTimer();
+  }
+
+  function resetRound() {
+    // Reset round-specific variables
+    playerChoice = null;
+    computerChoice = null;
+    winner = null;
+  }
+
+  function playNextRound() {
+    // Start new round
+    updateRoundNumber();
+    vsImage(); // Call after incrementing
+    setTimeout(() => {
+      playRound();
+    }, 2000);
+  }
+
+  function endGame() {
+    console.log("Game Over");
+    roundNumberElement.style.display = "block";
+    
+    // Determine the winner based on scores
+    let winnerText;
+    if (playerScore > computerScore) {
+        winnerText = "PLAYER WINS!";
+    } else if (playerScore < computerScore) {
+        winnerText = "COMPUTER WINS!";
+    } else {
+        winnerText = "it's a tie!";
+    }
+
+    // Display the winner or "GAME OVER"
+    let isGameOver = false;
+    setInterval(() => {
+        roundNumberElement.textContent = isGameOver ? "GAME OVER" : winnerText;
+        isGameOver = !isGameOver;
+    }, 1500); // Switch every second
+    // You can add additional actions here such as displaying a message to the user
+}
+  document.addEventListener("DOMContentLoaded", function () {
+    resetGame(); // Start the game
+  });
+</script>
+
+<!-- player choice -->
+<script src="static/js/player_choice.js"></script>
+
+<!-- Selection prompt remove -->
+<script src="static/js/selection_prompt.js"></script>
+
+<!-- Auto Player Selection -->
+<script src="static/js/auto_player_selection.js"></script>
+
+<!-- hides computer is making a choice -->
+<script src="static/js/computer_textchoice.js"></script>
+
+<!-- hides vs until game time -->
+<script src="static/js/vs_image.js"></script>
+
+<!-- GAME LOGIC -->
+<script src="static/js/game_logic.js"></script>
+
+<!-- displays round winner and scoreboard -->
+<script>
+  function determineWinner(playerChoice, computerSelectedHand) {
+    const winningHands = {
+      rock: ["scissors", "lizard"],
+      paper: ["rock", "spock"],
+      scissors: ["paper", "lizard"],
+      lizard: ["paper", "spock"],
+      spock: ["scissors", "rock"],
+    };
+
+    if (winningHands[playerChoice].includes(computerSelectedHand)) {
+      return {
+        winner: "Player",
+        description: `${playerChoice} beats ${computerSelectedHand}`,
+      };
+    } else if (winningHands[computerSelectedHand].includes(playerChoice)) {
+      return {
+        winner: "Computer",
+        description: `${computerSelectedHand} beats ${playerChoice}`,
+      };
+    } else {
+      return { winner: "Draw", description: "It's a draw!" };
+    }
+  }
+
+  function updateScore(winner) {
+    if (winner === "Player") {
+      playerScore++;
+    } else if (winner === "Computer") {
+      computerScore++;
+    }
+    // Log the winner or draw right before updating the score
+    console.log(`Round ${round} Winner: ${winner}`);
+    updateScoresDisplay();
+  }
+
+  function announceRoundWinner(playerChoice, computerSelectedHand) {
+    const { winner, description } = determineWinner(
+      playerChoice,
+      computerSelectedHand
+    );
+    displayRoundResult(description, winner);
+  }
+
+  function displayRoundResult(description, winner) {
+    let roundResultElement = document.getElementById("roundResult");
+    let roundNumberElement = document.getElementById("roundNumber");
+    roundNumberElement.style.display = "none"; // Immediately hide the round number
+
+    roundResultElement.textContent = description; // Display the round result
+
+    setTimeout(() => {
+      if (winner !== "Draw") {
+        roundResultElement.textContent = `ROUND WINNER: ${winner}`;
+      } else {
+        roundResultElement.textContent = description; // Keeps showing "It's a draw!"
+      }
+
+      updateScore(winner); // Update the score after announcing the winner
+
+      setTimeout(() => {
+        round = round + 1;
+        roundResultElement.textContent =
+          round > totalRounds ? "" : "ROUND " + round; // Clear the result after some time, preparing for next actions
+        document.getElementById("playerHandImage").src =
+          "Images/pstatushand.png";
+        document.getElementById("computerHandImage").src =
+          "Images/cstatushand.png";
+        // Select all the icon elements within the "icons-row" div
+        const icons = document.querySelectorAll(".icons-row .icon");
+        // Remove "selected" class from all icons
+        icons.forEach((icon) => icon.classList.remove("selected"));
+        // Set all icons to their default background image
+        icons.forEach(
+          (icon) =>
+            (icon.style.backgroundImage = `url("${icon.dataset.default}")`)
+        );
+        if (round <= totalRounds) {
+          // Changed to include the last round
+          // If not last round, play next round
+          playNextRound();
+        } else {
+          // If last round, end game
+          endGame();
+        }
+      }, 2000); // Adjust this timeout as needed
+    }, 2000); // Adjust this delay based on your animation or desired timing
+  }
+
+  function updateScoresDisplay() {
+    document.querySelector(".player-score-box").textContent = playerScore;
+    document.querySelector(".computer-score-box").textContent =
+      computerScore;
+  }
+
+  function playGame(playerChoice, computerSelectedHand) {
+    announceRoundWinner(playerChoice, computerSelectedHand);
+  }
+</script>
+
+
+
+
+    <!-- /////////////////////////////////////////////////////// -->
+   
+    <!-- Popup Logic -->
+    <script src="static/js/popup_logic.js"></script>
+      
+      
+      <!-- /////////////////////////////////////////////////////// -->
+          <!-- Your existing footer -->
+          <footer>
+              <div class="footer-content">
+                  <a href="../ROOT/rules.html">
+                      <img src="Images/play.png" alt="Rock Paper Scissors Lizard Spock Rules" class="footer-img">
+                  </a>
+                  <a href="#" onclick="showPopup()">
+                      <img src="Images/send.png" alt="Send to a Friend" class="footer-img">
+                  </a>
+                  <a href="../ROOT/about.html">
+                      <img src="Images/about.png" alt="About the Creators" class="footer-img">
+                  </a>
+              </div>
+          </footer>
+      </body>
+      </html>

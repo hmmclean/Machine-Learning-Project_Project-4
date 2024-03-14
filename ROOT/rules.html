@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPSLS - The Ultimate Game</title>
+    <!-- Favicon -->
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+    <!-- Favicon -->
+    <!-- Font LATO CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+</head>
+<body>
+    <!-- The main content ... -->
+    <main>
+        <!-- Popup Container for Video -->
+        <div id="videoPopup" class="popup">
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video id="video" autoplay>
+                        <source src="Images/Sequence%2001.mp4" type="video/mp4">
+                    </video>
+                    <button id="close-button" class="close-btn" onclick="closeVideoPopup()">&times;</button>
+                    <button id="play-button" onclick="playPauseVideo()"></button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="dash-container">
+            <!-- Your existing content here -->
+            <div id="rules">
+                <div id="ruleHeader">
+                    <div class="rule-title" id="ruleTitle">
+                        <div class="writtenRules"><img src="Images/how_played.png" alt="How It's Played"></div>
+                    </div>
+                    <div class="rule-title" id="visualTitle">
+                        <div class="visualRules"><img src="Images/choose_weapon.png" alt="Choose Your Weapon"></div>
+                    </div>
+                </div>
+                <div id="ruleDescription">
+                    <div class="rules-column" id="writtenText">
+                        <p>As Sheldon says, the rules are simple. But here's a breakdown <b>just in case...</b></p>
+                        <ul>
+                            <li>Rock&nbsp;&nbsp;<b>CRUSHES</b>&nbsp;&nbsp;Scissors</li>
+                            <li>Rock&nbsp;&nbsp;<b>SMASHES</b>&nbsp;&nbsp;Lizard</li>
+                            <li>Paper&nbsp;&nbsp;<b>COVERS</b>&nbsp;&nbsp;Rock</li>
+                            <li>Paper&nbsp;&nbsp;<b>DISPROVES</b>&nbsp;&nbsp;Spock</li>
+                            <li>Scissors&nbsp;&nbsp;<b>CUTS</b>&nbsp;&nbsp;Paper</li>
+                            <li>Scissors&nbsp;&nbsp;<b>DECAPITATES</b>&nbsp;&nbsp;Lizard</li>
+                            <li>Lizard&nbsp;&nbsp;<b>POISONS</b>&nbsp;&nbsp;Spock</li>
+                            <li>Lizard&nbsp;&nbsp;<b>EATS</b>&nbsp;&nbsp;Paper</li>
+                            <li>Spock&nbsp;&nbsp;<b>VANQUISHES</b>&nbsp;&nbsp;Scissors</li>
+                            <li>Spock&nbsp;&nbsp;<b>VAPORIZES</b>&nbsp;&nbsp;Rock</li>
+                        </ul>
+                    </div>
+                    <div class="rules-column" id="rulesDiagram">
+                        <!-- Initial image for the animation -->
+                        <img src="Images/rules_dia.png" alt="Rules Diagram" id="rulesDiagram">
+                        <!-- Button under the rules diagram -->
+                        <a href="../ROOT/index.html" id="yourButtonId">BACK TO GAME</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+ <!-- Popup Container -->
+<div id="popupContainer" class="popup-container">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <img src="Images/logo.png" alt="Image Description"><br><br>
+        <img src="Images/friends.png" alt="play">
+        <form id="popupForm" action="javascript:void(0);">
+            <label for="senderName">Your Name:</label><br>
+            <input type="text" id="senderName" name="senderName" required><br>
+            <label for="senderEmail">Your Email:</label><br>
+            <input type="email" id="senderEmail" name="senderEmail" required><br>
+            <label for="recipientEmail">Friend's Email:</label><br>
+            <input type="email" id="recipientEmail" name="recipientEmail" required><br>
+            <input type="submit" value="SEND">
+        </form>
+    </div>
+</div>
+    <!-- /////////////////////////////////////////////////////// -->
+
+
+   <!-- player choice -->
+<script src="static/js/video_popup.js"></script>
+
+<!-- Script for send to a friend popup -->
+<script>
+    // Function to show the popup
+    function showPopup() {
+        document.getElementById('popupContainer').style.display = 'block';
+    }
+    
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('popupContainer').style.display = 'none';
+    }
+</script>
+
+
+
+<!-- /////////////////////////////////////////////////////// -->
+    <!-- Your existing footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="../ROOT/rules.html">
+                <img src="Images/play.png" alt="Rock Paper Scissors Lizard Spock Rules" class="footer-img">
+            </a>
+            <a href="#" onclick="showPopup()">
+                <img src="Images/send.png" alt="Send to a Friend" class="footer-img">
+            </a>
+            <a href="../ROOT/about.html">
+                <img src="Images/about.png" alt="About the Creators" class="footer-img">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
