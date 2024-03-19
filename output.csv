@@ -1,0 +1,110 @@
+Game ID,Round,Computer Choice,Player Choice,Round Winner
+685667,1,paper,paper,Draw
+685667,2,paper,paper,Draw
+685667,3,rock,spock,Player
+685667,4,scissors,rock,Player
+685667,5,lizard,scissors,Player
+685667,6,lizard,rock,Player
+685667,7,paper,rock,Computer
+685667,8,spock,rock,Computer
+685667,9,lizard,spock,Computer
+685667,10,rock,lizard,Computer
+Game ID,Round,Computer Choice,Player Choice,Round Winner
+196927,1,scissors,paper,Computer
+196927,2,spock,spock,Draw
+196927,3,rock,scissors,Computer
+196927,4,spock,rock,Computer
+196927,5,paper,spock,Computer
+196927,6,lizard,spock,Computer
+196927,7,paper,spock,Computer
+196927,8,lizard,scissors,Player
+196927,9,rock,lizard,Computer
+196927,10,lizard,rock,Player
+Game ID,Round,Computer Choice,Player Choice,Round Winner
+257288,1,lizard,spock,Computer
+257288,2,scissors,rock,Player
+257288,3,paper,lizard,Player
+257288,4,rock,scissors,Computer
+257288,5,paper,spock,Computer
+257288,6,scissors,spock,Player
+257288,7,lizard,rock,Player
+257288,8,lizard,scissors,Player
+257288,9,scissors,lizard,Computer
+257288,10,scissors,rock,Player
+Game ID,Round,Computer Choice,Player Choice,Round Winner
+202558,1,paper,scissors,Player
+202558,2,scissors,lizard,Computer
+202558,3,scissors,rock,Player
+202558,4,spock,paper,Player
+202558,5,lizard,lizard,Draw
+202558,6,paper,rock,Computer
+202558,7,rock,paper,Player
+202558,8,lizard,lizard,Draw
+202558,9,rock,rock,Draw
+202558,10,lizard,scissors,Player
+Game ID,Round,Computer Choice,Player Choice,Round Winner
+947159,1,scissors,rock,Player
+947159,2,rock,rock,Draw
+947159,3,lizard,rock,Player
+947159,4,paper,rock,Computer
+947159,5,scissors,rock,Player
+947159,6,lizard,rock,Player
+947159,7,rock,rock,Draw
+947159,8,spock,rock,Computer
+947159,9,paper,rock,Computer
+947159,10,scissors,rock,Player
+Game ID,Round,Computer Choice,Player Choice,Round Winner
+142731,1,scissors,scissors,Draw
+142731,2,rock,scissors,Computer
+142731,3,scissors,scissors,Draw
+142731,4,lizard,rock,Player
+142731,5,paper,paper,Draw
+142731,6,scissors,lizard,Computer
+142731,7,spock,rock,Computer
+142731,8,paper,paper,Draw
+142731,9,scissors,scissors,Draw
+142731,10,paper,rock,Computer
+Game ID,Round,Computer Choice,Player Choice,Round Winner
+869648,1,lizard,lizard,Draw
+869648,2,lizard,rock,Player
+869648,3,spock,paper,Player
+869648,4,rock,spock,Player
+869648,5,spock,lizard,Player
+869648,6,lizard,rock,Player
+869648,7,paper,lizard,Player
+869648,8,paper,scissors,Player
+869648,9,paper,spock,Computer
+869648,10,paper,rock,Computer
+Game ID,Round,Computer Choice,Player Choice,Round Winner
+989985,1,spock,scissors,Computer
+989985,2,rock,spock,Player
+989985,3,lizard,rock,Player
+989985,4,lizard,lizard,Draw
+989985,5,scissors,paper,Computer
+989985,6,scissors,rock,Player
+989985,7,lizard,lizard,Draw
+989985,8,lizard,lizard,Draw
+989985,9,spock,spock,Draw
+989985,10,spock,rock,Computer
+Game ID,Round,Computer Choice,Player Choice,Round Winner
+991048,1,paper,rock,Computer
+991048,2,spock,spock,Draw
+991048,3,scissors,lizard,Computer
+991048,4,paper,scissors,Player
+991048,5,scissors,spock,Player
+991048,6,rock,lizard,Computer
+991048,7,rock,paper,Player
+991048,8,scissors,scissors,Draw
+991048,9,spock,spock,Draw
+991048,10,spock,lizard,Player
+Game ID,Round,Computer Choice,Player Choice,Round Winner
+6542,1,scissors,scissors,Draw
+6542,2,lizard,rock,Player
+6542,3,scissors,scissors,Draw
+6542,4,paper,spock,Computer
+6542,5,lizard,rock,Player
+6542,6,lizard,paper,Computer
+6542,7,scissors,rock,Player
+6542,8,spock,spock,Draw
+6542,9,lizard,lizard,Draw
+6542,10,spock,rock,Computer

@@ -1,0 +1,43 @@
+
+Game ID: 685667
+index.html:121 Round: 1
+game_logic.js:52 Computer Chose: paper
+game_logic.js:98 Player Chose:  paper
+winner_scoreboard.js:34 Round 1 Winner: Draw
+index.html:121 Round: 2
+game_logic.js:52 Computer Chose: paper
+game_logic.js:98 Player Chose:  paper
+winner_scoreboard.js:34 Round 2 Winner: Draw
+index.html:121 Round: 3
+game_logic.js:52 Computer Chose: rock
+game_logic.js:98 Player Chose:  spock
+winner_scoreboard.js:34 Round 3 Winner: Player
+index.html:121 Round: 4
+game_logic.js:52 Computer Chose: scissors
+game_logic.js:98 Player Chose:  rock
+winner_scoreboard.js:34 Round 4 Winner: Player
+index.html:121 Round: 5
+game_logic.js:52 Computer Chose: lizard
+game_logic.js:98 Player Chose:  scissors
+winner_scoreboard.js:34 Round 5 Winner: Player
+index.html:121 Round: 6
+game_logic.js:52 Computer Chose: lizard
+game_logic.js:98 Player Chose:  rock
+winner_scoreboard.js:34 Round 6 Winner: Player
+index.html:121 Round: 7
+game_logic.js:52 Computer Chose: paper
+game_logic.js:98 Player Chose:  rock
+winner_scoreboard.js:34 Round 7 Winner: Computer
+index.html:121 Round: 8
+game_logic.js:52 Computer Chose: spock
+game_logic.js:98 Player Chose:  rock
+winner_scoreboard.js:34 Round 8 Winner: Computer
+index.html:121 Round: 9
+game_logic.js:52 Computer Chose: lizard
+game_logic.js:98 Player Chose:  spock
+winner_scoreboard.js:34 Round 9 Winner: Computer
+index.html:121 Round: 10
+game_logic.js:52 Computer Chose: rock
+game_logic.js:98 Player Chose:  lizard
+winner_scoreboard.js:34 Round 10 Winner: Computer
+index.html:176 Game Over
