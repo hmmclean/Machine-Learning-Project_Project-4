@@ -84,7 +84,7 @@ For our final project, we are creating a website with the game, rock, paper, sci
 - This page is the main index of the site. It starts immediately into the game giving the player 10 seconds to choose a hand. 
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/index.png">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/index.PNG">
     </p>
 
 #### Rules page
@@ -92,7 +92,7 @@ For our final project, we are creating a website with the game, rock, paper, sci
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/video.png">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/video.PNG">
     </p>
 <br>
 
@@ -100,7 +100,7 @@ For our final project, we are creating a website with the game, rock, paper, sci
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/rules.png">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/rules.PNG">
     </p>
 <br>
 
@@ -109,7 +109,7 @@ For our final project, we are creating a website with the game, rock, paper, sci
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/about_us.png">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/about_us.PNG">
     </p>
 <br>
 
@@ -118,7 +118,7 @@ For our final project, we are creating a website with the game, rock, paper, sci
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/data.png">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/data.PNG">
     </p>
 <br>
 
