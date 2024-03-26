@@ -18,26 +18,20 @@ For our final project, we are creating a website with the game, rock, paper, sci
 * Assets - Images belonging to the repo.
 
 # Data Extraction, Transformation, and Loading
-- Below is a representation of our DTL process
+- Below is a representation of our process from game creation, to data collection, to modeling. 
 <p align="center">
-    <img src="https://github.com/hmmclean/Data-Visualization-Project_Project-3/blob/main/Assets/DTLpng.png" width="650">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thought_process.PNG">
     </p>
 
 
 ## Extraction 
-- We pulled 5 CSVs from the National Park Services API:
-   - Activities
-   - Fees and Passes
-   - Park Activities
-   - Parks List
-   - Visitors' Centers
+- We pulled a CSV from the RPSLS website.
 
 ## Transform
-- After some deliberation as a team and diving into each spreadsheet, we decided to keep only the Activities database and to merge the Fees/Passes and Parks List datasets.
+- We cleaned and organized the data into different features and bins, to train a deep learning model which then helped the reinforcement learning model perform better. 
 
 ## Load
-- Once data cleaning was complete, the data was loaded into MongoDB and JSONified via PyMongo. We chose MongoDB due to the ease with which it can be integrated into Python/Jupyter Notebooks using PyMongo. The JSON files were hosted on separate Github repos to allow easy access to the data for website construction.
-### Note! If you are attempting this project yourself given the data here, the two code lines you need to upload the cleaned CSVs are ```mongoimport --type csv -d national_parks -c parks_list --drop --headerline --file parks_list_cleaned.csv```, and ```mongoimport --type csv -d national_parks -c activities --drop --headerline --file activities.csv```.
+- Data was collected and loaded into MongoDB Atlas via the website. Once it was transformed it was then loaded again into the deep learning model. 
 
 # Website Outline
 - Below is a representation of our process for filtering data and how our website logic might look.
