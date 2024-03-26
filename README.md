@@ -1,12 +1,8 @@
-# Machine-Learning-Project_Project-4
-For our final project, we are creating a website with the game, rock, paper, scissors, lizard, spock to collect data on player choices. We will use this data to train a model and feed it back into the computer to make better choices against the player.
-# Visualizing America's State Parks
-## Exploring America's Natural Wonders: A Comprehensive National Parks Website Project
-
-[View our Website Here!](https://hmmclean.github.io/Data-Visualization-Project_Project-3/WEBSITE/index.html)
-
+## Machine-Learning-Project_Project-4
+# Rock, Paper, Scissors, Lizard, Spock Game
 # Overview
-We started with the idea of building a website to help people determine which of America’s national parks to visit. We wanted to show activities, distances, states, directions, and weather. This project aims to create a valuable resource for individuals interested in exploring and learning about the diverse national parks across the United States.
+For our final project, we are creating a website with the game, rock, paper, scissors, lizard, Spock to collect data on player game choices. We will use this data to train a reinforcement learning model to enhance playing against a computer. 
+[View our Website Here!](https://rpslsgame.com/index.html)
 
 # Repo Navigation 
 * Resources
@@ -72,25 +68,22 @@ We started with the idea of building a website to help people determine which of
         * CSS Folder
            * styles.css - CSS styles for the index page
       * JS Folder
-           * MAIN LOGIC FOR PAGE FUNCTIONALITY
-              *  background_logic.js - Script that rotates the background of all the pages
-              *  popup_logic.js - Script that handles the popup for the about portion of the page
-           * view_logic.js - Script that handles the carousel for the index page
-           * park_logic.js - Script that handles the dropdown, filtering and map for the park page
-           * park_reset_logic.js - Script that resets the parks page back to initializaiton state
-           * activity_logic.js - Script that handles the dropdown, filtering and map for the activity page
-           * activity_reset_logic.js - Script that resets the activity page back to initializaiton state
-           * state_logic.js - Script that handles the dropdown, filtering and map for the state page
-           * state_reset_logic.js - Script that resets the state page back to initializaiton state
-           * directions_logic.js - Script that handles the map for the directions page
-           * directions_reset.js - Script that resets the activity page back to initializaiton state *only clears icons as the app is in dev and layers are buggy*
+           * auto_player_selection.js - Script that handles the auto selection for the player if they do not select within the 10 sec time allotment. 
+           * computer_textchoice.js - Script that handles 
+           * game_id.js - Script that creates a unique game ID for each game.
+           * game_logic.js - Script that runs the entire game. 
+           * player_choice.js - Script that 
+           * popup_logic.js - Script that 
+           * selection_prompt.js - Script that
+           * video_popup.js - Script that creates the video popup on the rules page. 
+           * vs_image.js - Script that
 
 ## WEBSITE Survey
 #### Main index page
 - This page is the main index of the site. It starts immediately into the game giving the player 10 seconds to choose a hand. 
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/index.png" width="700">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/index.png">
     </p>
 
 #### Rules page
@@ -98,7 +91,7 @@ We started with the idea of building a website to help people determine which of
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/video.png" width="700">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/video.png">
     </p>
 <br>
 
@@ -106,7 +99,7 @@ We started with the idea of building a website to help people determine which of
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/rules.png" width="700">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/rules.png">
     </p>
 <br>
 
@@ -115,7 +108,7 @@ We started with the idea of building a website to help people determine which of
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/about_us.png" width="700">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/about_us.png">
     </p>
 <br>
 
@@ -124,7 +117,7 @@ We started with the idea of building a website to help people determine which of
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/data.png" width="700">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/data.png">
     </p>
 <br>
 
