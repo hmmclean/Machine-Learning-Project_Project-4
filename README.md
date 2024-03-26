@@ -1,7 +1,8 @@
-## Machine-Learning-Project_Project-4
+# Machine-Learning-Project_Project-4
 # Rock, Paper, Scissors, Lizard, Spock Game
-# Overview
-For our final project, we are creating a website with the game, rock, paper, scissors, lizard, Spock to collect data on player game choices. We will use this data to train a reinforcement learning model to enhance playing against a computer. 
+## Overview
+For our final project, we are creating a website with the game, rock, paper, scissors, lizard, Spock to collect data on player game choices. We will use this data to train a reinforcement learning model to enhance playing against a computer.
+
 [View our Website Here!](https://rpslsgame.com/index.html)
 
 # Repo Navigation 
