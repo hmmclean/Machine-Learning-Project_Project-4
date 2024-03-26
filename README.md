@@ -20,7 +20,7 @@ For our final project, we are creating a website with the game, rock, paper, sci
 # Data Extraction, Transformation, and Loading
 - Below is a representation of our process from game creation, to data collection, to modeling. 
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thought_process.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thought_process.png">
     </p>
 
 
