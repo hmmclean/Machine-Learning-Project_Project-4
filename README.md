@@ -125,7 +125,7 @@ For our final project, we are creating a website with the game, rock, paper, sci
 # Project Role Overview
 - A summary of efforts for the RPSLS Project
 
- * State Parks Project
+ * RPSLS Project
     * Repo Organizer - Haylee McLean
     * Presentation - Tia Scott
     * ReadMe - Haylee McLean
@@ -155,11 +155,12 @@ For our final project, we are creating a website with the game, rock, paper, sci
 
 
 # References and Resources
-* [National Park Service API](https://www.nps.gov/subjects/developer/api-documentation.htm)
-* [Database system (MongoDB) for data storage](www.mongodb.com) 
+* [Database system (MongoDB Atlas) for data storage](https://www.mongodb.com/atlas/database) 
 * Frontend development with HTML, CSS, and JavaScript.
-* Mapping libraries for map visualization and geospatial tools for distance calculations.
-     * [Leaflet](https://leafletjs.com/) 
-     * [Leaflet Routing Machine](https://www.liedman.net/leaflet-routing-machine/)
-     * [Leaflet Control Geocoder](https://github.com/perliedman/leaflet-control-geocoder) 
+* Libraries for modeling.
+     * [TensorFlow](https://www.tensorflow.org/) 
+     * [Keras](https://keras.io/examples/rl/)
+     * [Keras-rl Agents](https://keras-rl.readthedocs.io/en/latest/agents/overview/)
+     * [Building an Environment](https://gymnasium.farama.org/)
+     * [Deep Q-Learning Research](https://towardsdatascience.com/self-learning-ai-agents-part-ii-deep-q-learning-b5ac60c3f47) 
 * [ChatGPT](https://chat.openai.com/)
