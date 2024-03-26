@@ -158,3 +158,13 @@ This project involved creating a website for a specific game, RPSLS, collecting 
      * [Building an Environment](https://gymnasium.farama.org/)
      * [Deep Q-Learning Research](https://towardsdatascience.com/self-learning-ai-agents-part-ii-deep-q-learning-b5ac60c3f47) 
 * [ChatGPT](https://chat.openai.com/)
+
+
+Website
+Node.js - https://www.w3schools.com/nodejs/
+	     - https://cloud.google.com/nodejs/docs/
+MongoDB Atlas - https://cloud.mongodb.com/
+Shakeeb Ashraf - I/O Project Advisor
+ 
+General
+ChatGPT - https://chat.openai.com/
