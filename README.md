@@ -144,14 +144,19 @@ On the other hand, when we request game data, the process is similar. The middle
 # Modeling
 
 ## Intro to Reinforcement Learning
-For the RPSLS game, the best type of modeling is reinforcement learning. We took on the task of learning RL modeling and using it with our data. 
-
+For the RPSLS game, the best type of modeling is reinforcement learning. We took on the task to learn RL modeling to use it with our data. Reinforcement learning is a type of machine learning where an agent learns to make a decision based on actions in an environment to achieve a goal. Unlike supervised and unsupervised learning, reinforcement learning is about training to make actions for cumulative rewards.
 
 ## Set Baseline
-To determine a baseline, a deep learning model and an RL model were used (RPSLS_DeepL_Model_Random_Actions and RPSLS_DQN_Model_Random). This allowed us to see how an agent would perform in a random environment. 
-SCREENSHOT OF BASELINE SLIDE
+To determine a baseline a deep learning model and RL model were made (RPSLS_DeepL_Model_Random_Actions and RPSLS_DQN_Model_Random). This allowed us to see how an agent would perform in a truly random environment. 
+In the graphic below you can see that the random models are performing just above the expected probability for this game with an accuracy score of 40% for the deep learning model and a positive sum, or cumulative reward, of 1 for the RL model. Implying the model is learning a little but not very well. However, once you add in a strategy, in this case, it was weighting the probabilities for rock, paper, scissors, lizard, and Spock, from the website's player data, the model's ability to learn the game jumps significantly with a much larger positive cumulative reward of 418. 
+<br>
+<br>
+<p align="center">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/baseline.PNG">
+    </p>
+<br>
 
-## Optimization 
+## Additional Models and Optimization 
 
 
 # Project Role Overview
