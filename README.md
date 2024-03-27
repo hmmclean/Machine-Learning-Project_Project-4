@@ -15,6 +15,8 @@ This project involved creating a website for a specific game, RPSLS, collecting 
 
 [View our Website Here!](https://rpslsgame.com/index.html)
 
+TABLEAU LINK: https://public.tableau.com/app/profile/tia.scott/viz/RPSLSOverview/ComputerV_PlayerChoice?publish=yes
+
 - Below is a representation of our process from game creation, to data collection, to modeling. 
 <p align="center">
     <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thought_process.png">
