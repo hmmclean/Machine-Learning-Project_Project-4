@@ -160,7 +160,7 @@ In the graphic below you can see that the random models are performing just abov
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/baseline.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/baseline.PNG" width="500">
     </p>
 <br>
 
