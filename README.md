@@ -138,7 +138,7 @@ On the other hand, when we request game data, the process is similar. The middle
 - The initial data collection from the RPSLS website was pushed into our database. After it was downloaded from the database and transformed, it was loaded into the deep learning models.
 
 ## Tableau 
-[ADD INFORMATION](https://public.tableau.com/app/profile/tia.scott/viz/RPSLSOverview/ComputerV_PlayerChoice)
+[LINK TO OUR TABLEAU](https://public.tableau.com/app/profile/tia.scott/viz/RPSLSOverview/ComputerV_PlayerChoice)
 
 
 # Modeling
