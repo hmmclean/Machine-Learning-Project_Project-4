@@ -17,7 +17,7 @@ Our goal was to understand user behavior and potentially develop optimal strateg
 
 - Below is a representation of our process from game creation to data collection to modeling. 
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thought_process.png">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thoughtprocess.png" width="500">
     </p>
 
 ## Game Design and Website Development
@@ -38,7 +38,7 @@ In addition to those factors, we also needed to consider that because this game 
 ### Website Overview 
 The start of our project was to create a working RPSLS game and have it perform specific actions that would create "bias-mitigated" game data. Using HTML as the backbone for the game, CSS incorporates styles across the entire game to execute specific styles and animation keyframes. The "thinking" behind the game lies in Javascripting, which comprises several scripts that run asynchronously within the gameplay until the end of the round. Then, the scripts return to their pre-state and then run again.
 
-* ROOT>
+* ROOT> *This is only the front end of our website*
     * index.html - Main landing page
     * about.html - about us page
     * rules.html - rules page
@@ -62,19 +62,25 @@ The start of our project was to create a working RPSLS game and have it perform 
 ### Game Logic, Player and Computer
 At the start of our game, the player will see a seamless design that allows them to pick a hand (with buttons) and have the action called via JavaScript and keyframe animation after the countdown. The game was designed to make players “feel” like they are playing a “similar” opponent and elicit real play responses. Inside the console, the game logs all the moves from the player and the computer, the rounds, the winner, and a unique game ID.
 
-* <IMAGE>
+<p align="center">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/player%20perception.png" height="450">
+    </p>
 
 While the player is experiencing a simulated game, in reality, much of the game happens right at the round opening and closing. In rounds 1-3, the computer chooses right at the round opening to avoid influence from the player's hand. The round continues until after 4 seconds when the logging is not only logged to the console but also to our backend environment using the Node.JS framework and middleware to make an API call to MongoDB Atlas. 
 
 In addition, in rounds 1-3, the computer only randomly chooses a hand. This is due to the use of the N-gram method. The computer needs 3 rounds of data to begin processing the next possible outcome at round 4. This method is carried through rounds 4-10 using the subsequent 3 rounds to simplify the decision for the computer. 
 
-* <IMAGE>
+<p align="center">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/gamelogic.png" height="450">
+    </p>
 
 
 ### Logging and Input/Output Data Aggregation
 Inside the console, the game logs all the moves from the player and the computer, the rounds, the winner, and a unique game ID.
 
-* <IMAGE>
+<p align="center">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/logging.png" height="450">
+    </p>
 
 In addition to the logging done in the console, we also used an event-driven non-blocking I/O model. This method is listening for an event to happen in the game, and the model will run simultaneous scripts without waiting for another process to complete. Node.js is the heart of our game reporting and assists the flow of the program, which is determined by events such as user actions. Node uses a loop to initiate and execute logging operations, and in our game, Node is listening for the announcement of the round winner. As shown in the image below, there is a front end to our game (the hosted website) and a back end to our game (an environment we created). Node.js is not technically in both environments. However, the framework assists in the execution on both ends, but technically, the node lives on our back end. 
 
@@ -82,14 +88,16 @@ The process starts with logging in to the RPSLS game. An Express.JS script parse
 
 On the other hand, when we request game data, the process is similar. The middleware handles a GET request, validates a secret key, queries game data from MongoDB, formats it as CSV, and streams the file to the client for download.
 
-* <IMAGE>
+<p align="center">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/frontbackend.png" height="450">
+    </p>
 
 ## WEBSITE Survey
 #### Main index page
 - This page is the site's main index. It starts immediately into the game, giving the player 10 seconds to choose a hand. 
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/index.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/index.PNG" width="500">
     </p>
 
 #### Rules page
@@ -97,7 +105,7 @@ On the other hand, when we request game data, the process is similar. The middle
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/video.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/video.PNG" width="500">
     </p>
 <br>
 
@@ -105,7 +113,7 @@ On the other hand, when we request game data, the process is similar. The middle
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/rules.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/rules.PNG" width="500">
     </p>
 <br>
 
@@ -114,7 +122,7 @@ On the other hand, when we request game data, the process is similar. The middle
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/about_us.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/about_us.PNG" width="500">
     </p>
 <br>
 
@@ -123,7 +131,7 @@ On the other hand, when we request game data, the process is similar. The middle
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/data.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/data.PNG" width="500">
     </p>
 <be>
 
@@ -138,7 +146,7 @@ On the other hand, when we request game data, the process is similar. The middle
 - The initial data collection from the RPSLS website was pushed into our database. After it was downloaded from the database and transformed, it was loaded into the deep learning models.
 
 ## Tableau 
-[ADD INFORMATION](https://public.tableau.com/app/profile/tia.scott/viz/RPSLSOverview/ComputerV_PlayerChoice)
+[LINK TO OUR TABLEAU](https://public.tableau.com/app/profile/tia.scott/viz/RPSLSOverview/ComputerV_PlayerChoice)
 
 
 # Modeling
@@ -152,7 +160,7 @@ In the graphic below you can see that the random models are performing just abov
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/baseline.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/baseline.PNG" width="500">
     </p>
 <br>
 
