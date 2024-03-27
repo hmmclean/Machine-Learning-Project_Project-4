@@ -1,14 +1,12 @@
-# Machine-Learning-Project_Project-4
 # Rock, Paper, Scissors, Lizard, Spock Game
 
-# Repo Navigation 
-* ROOT - HTML, JS, and CSS source documentation for our website. 
-* Q - Folder containing RL modeling code.
-* HMM_Modeling - Folder containing jupyter notebooks for a deep learning model and RL model using an environment built with random choice and an RL model using an environment built with strategy. 
-* Data - txt file
-* Output - csv file
-* Score Export - jupyter notebook file
-* Assets - Images belonging to the repo.
+## Repo Navigation 
+* Assets - Images belonging to the repo
+* Game Resources - Preliminary files for cleaning and merging game data
+* HMM_Modeling - Folder containing jupyter notebooks for a deep learning model and RL model using an environment built with random choice and an RL model using an environment built with strategy
+* Q - Folder containing Tensorflow RL modeling code
+* ROOT - HTML, JS, and CSS source documentation for our website - *This is only the front-end of our website*
+* Tableau - Tableau workbook of visulizations that came from original game data
 
 ## Overview
 This project involved creating a website for a specific game, RPSLS, collecting user data from interactions with the game, storing this data, and then using it to build and compare machine learning models, including deep learning and reinforcement learning, to understand user behavior and potentially develop optimal strategies for the game.
