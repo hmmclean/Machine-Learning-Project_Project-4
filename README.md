@@ -148,7 +148,7 @@ For the RPSLS game, the best type of modeling is reinforcement learning. We took
 
 ## Set Baseline
 To determine a baseline a deep learning model and RL model were made (RPSLS_DeepL_Model_Random_Actions and RPSLS_DQN_Model_Random). This allowed us to see how an agent would perform in a truly random environment. 
-In the graphic below you can see that the random models are performing just above the expected probability for this game with an accuracy score of 40% for the deep learning model and a positive sum, or cumulative reward, of 1 for the RL model. Implying the model is learning a little but not very well. However, once you add in a strategy, in this case, it was weighting the probabilities for rock, paper, scissors, lizard, and Spock, from the website's player data, the model's ability to learn the game jumps significantly with a much larger positive cumulative reward of 418. 
+In the graphic below you can see that the random models are performing just above the expected probability for this game with an accuracy score of 40% for the deep learning model and a positive sum, or cumulative reward, of 1 for the RL model. Implying the model is learning a little but not very well. However, once you add in a strategy to the model (RPSLS_DQN_Model_Strategy), in this case, it was weighting the probabilities for rock, paper, scissors, lizard, and Spock, from the website's player data, the model's ability to learn the game jumps significantly with a much larger positive cumulative reward of 418. 
 <br>
 <br>
 <p align="center">
