@@ -138,7 +138,7 @@ From the other side, when we request game data the process is similar. The middl
 - The initial collection of the data from the RPSLS website pushed into our database. After it was downloaded from the database and transformed it was then loaded into the deep learning models.
 
 ## Tableau 
-ADD INFORMATION
+[ADD INFORMATION](https://public.tableau.com/app/profile/tia.scott/viz/RPSLSOverview/ComputerV_PlayerChoice)
 
 
 # Modeling
