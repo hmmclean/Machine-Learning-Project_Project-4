@@ -38,7 +38,7 @@ In addition to those factors, we also needed to consider that because this game 
 ### Website Overview 
 The start of our project was to create a working RPSLS game and have it perform specific actions that would create "bias-mitigated" game data. Using HTML as the backbone for the game, CSS incorporates styles across the entire game to execute specific styles and animation keyframes. The "thinking" behind the game lies in Javascripting, which comprises several scripts that run asynchronously within the gameplay until the end of the round. Then, the scripts return to their pre-state and then run again.
 
-* ROOT>
+* ROOT> *This is only the front end of our website*
     * index.html - Main landing page
     * about.html - about us page
     * rules.html - rules page
