@@ -1,4 +1,9 @@
-# Rock, Paper, Scissors, Lizard, Spock Game
+# Project 4 - Rock, Paper, Scissors, Lizard, Spock Game
+
+Our project was to create a ROCK, PAPER, SCISSORS, LIZARD, SPOCK game, collecting user data from the game, storing this data, and then using the data to build machine learning models. 
+Our goal was to understand user behavior and potentially develop optimal strategies for the computer increase it’s chance of winning.
+
+[View our Website Here!](https://rpslsgame.com/index.html)
 
 ## Repo Navigation 
 * Assets - Images belonging to the repo
@@ -8,10 +13,7 @@
 * ROOT - HTML, JS, and CSS source documentation for our website - *This is only the front-end of our website*
 * Tableau - Tableau workbook of visulizations that came from original game data
 
-## Overview
-This project involved creating a website for a specific game, RPSLS, collecting user data from interactions with the game, storing this data, and then using it to build and compare machine learning models, including deep learning and reinforcement learning, to understand user behavior and potentially develop optimal strategies for the game.
-
-[View our Website Here!](https://rpslsgame.com/index.html)
+## Thought Process
 
 TABLEAU LINK: https://public.tableau.com/app/profile/tia.scott/viz/RPSLSOverview/ComputerV_PlayerChoice?publish=yes
 
@@ -20,9 +22,9 @@ TABLEAU LINK: https://public.tableau.com/app/profile/tia.scott/viz/RPSLSOverview
     <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thought_process.png">
     </p>
 
-# Game and Website Development
+## Game Design and Website Development
 
-## WEBSITE Navigation 
+### WEBSITE Navigation 
 - Once data was JSONified wireframes were created to contain the main navigation wiring, content containers, map containers, headers and footers. A main page was created as well as a main CSS for implementing color, styling and event specific handling, such as mozilla neglect. Once the main page was created other pages were created and modified to fit the page requirements. Images were created and added at this point. Once the page was built, functionality was added to populate the dropdowns, return map logic, reset the page and navigate away from the page. Other functionality was built such as background_logic.js and popup_logic.js to handle non-page specific requirements. 
 
 * ROOT>
