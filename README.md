@@ -70,13 +70,17 @@ While the player is experiencing a simulated game, in reality, much of the game 
 
 In addition, in rounds 1-3, the computer only randomly chooses a hand. This is due to the use of the N-gram method. The computer needs 3 rounds of data to begin processing the next possible outcome at round 4. This method is carried through rounds 4-10 using the subsequent 3 rounds to simplify the decision for the computer. 
 
-* <IMAGE>
+<p align="center">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/gamelogic.png" height="450">
+    </p>
 
 
 ### Logging and Input/Output Data Aggregation
 Inside the console, the game logs all the moves from the player and the computer, the rounds, the winner, and a unique game ID.
 
-* <IMAGE>
+<p align="center">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/logging.png" height="450">
+    </p>
 
 In addition to the logging done in the console, we also used an event-driven non-blocking I/O model. This method is listening for an event to happen in the game, and the model will run simultaneous scripts without waiting for another process to complete. Node.js is the heart of our game reporting and assists the flow of the program, which is determined by events such as user actions. Node uses a loop to initiate and execute logging operations, and in our game, Node is listening for the announcement of the round winner. As shown in the image below, there is a front end to our game (the hosted website) and a back end to our game (an environment we created). Node.js is not technically in both environments. However, the framework assists in the execution on both ends, but technically, the node lives on our back end. 
 
@@ -84,14 +88,16 @@ The process starts with logging in to the RPSLS game. An Express.JS script parse
 
 On the other hand, when we request game data, the process is similar. The middleware handles a GET request, validates a secret key, queries game data from MongoDB, formats it as CSV, and streams the file to the client for download.
 
-* <IMAGE>
+<p align="center">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/frontbackend.png" height="450">
+    </p>
 
 ## WEBSITE Survey
 #### Main index page
 - This page is the site's main index. It starts immediately into the game, giving the player 10 seconds to choose a hand. 
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/index.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/index.PNG" width="500">
     </p>
 
 #### Rules page
@@ -99,7 +105,7 @@ On the other hand, when we request game data, the process is similar. The middle
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/video.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/video.PNG" width="500">
     </p>
 <br>
 
@@ -107,7 +113,7 @@ On the other hand, when we request game data, the process is similar. The middle
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/rules.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/rules.PNG" width="500">
     </p>
 <br>
 
@@ -116,7 +122,7 @@ On the other hand, when we request game data, the process is similar. The middle
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/about_us.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/about_us.PNG" width="500">
     </p>
 <br>
 
@@ -125,7 +131,7 @@ On the other hand, when we request game data, the process is similar. The middle
 <br>
 <br>
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/data.PNG">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/data.PNG" width="500">
     </p>
 <be>
 
