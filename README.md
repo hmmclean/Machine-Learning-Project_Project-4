@@ -13,7 +13,7 @@ Our goal was to understand user behavior and potentially develop optimal strateg
 * ROOT - HTML, JS, and CSS source documentation for our website - *This is only the front-end of our website*
 * Tableau - Tableau workbook of visualizations that came from original game data
 
-#NOTE: To replicate this project, refer to the requirements.txt files in the [HMM_Modeling](https://github.com/hmmclean/Machine-Learning-Project_Project-4/tree/main/HMM_Modeling) and [QPO_Modeling](https://github.com/hmmclean/Machine-Learning-Project_Project-4/tree/main/QPO_Modeling) folders for specific environment variables for running this project.
+# NOTE: To replicate this project, refer to the requirements.txt files in the [HMM_Modeling](https://github.com/hmmclean/Machine-Learning-Project_Project-4/tree/main/HMM_Modeling) and [QPO_Modeling](https://github.com/hmmclean/Machine-Learning-Project_Project-4/tree/main/QPO_Modeling) folders for specific environment variables for running this project.
 
 ## Thought Process
 
