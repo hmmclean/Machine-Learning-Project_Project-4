@@ -1,54 +1,26 @@
 # Machine-Learning-Project_Project-4
 # Rock, Paper, Scissors, Lizard, Spock Game
+
+# Repo Navigation 
+* ROOT - HTML, JS, and CSS source documentation for our website. 
+* Q - Folder containing RL modeling code.
+* HMM_Modeling - Folder containing jupyter notebooks for a deep learning model and RL model using an environment built with random choice and an RL model using an environment built with strategy. 
+* Data - txt file
+* Output - csv file
+* Score Export - jupyter notebook file
+* Assets - Images belonging to the repo.
+
 ## Overview
 This project involved creating a website for a specific game, RPSLS, collecting user data from interactions with the game, storing this data, and then using it to build and compare machine learning models, including deep learning and reinforcement learning, to understand user behavior and potentially develop optimal strategies for the game.
 
 [View our Website Here!](https://rpslsgame.com/index.html)
 
-# Repo Navigation 
-* Resources
-    * Cleaned - CSVs of final cleaned data.
-    * Data Sources - JSONs of final cleaned data. These are being hosted on a separate GitHub repo ([Activities](https://github.com/QbicleTKG/activities-data-json-hosting) and [Parks List](https://github.com/QbicleTKG/parks-list-data-json-hosting)).
-    * Uncleaned - CSVs of data pulled from the NPS API.
-    * NPS_API_Data_Pull - Code used to pull the data from the NPS API.
- * WEBSITE - HTML, JS, and CSS source documentation for our website. 
-* Project Rubric - Text file containing the standards for our assignment.
-* Data Transformation Jupyter Notebook - main code used for initial data cleaning.
-* MongoApp - PyMongo Jupyter Notebook used to provide information on loading cleaned CSVs into MongoDB and JSONifying them.
-* Assets - Images belonging to the repo.
-
-# Data Extraction, Transformation, and Loading
 - Below is a representation of our process from game creation, to data collection, to modeling. 
 <p align="center">
     <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thought_process.png">
     </p>
 
-
-## Extraction 
-- We pulled a CSV from the RPSLS website.
-
-## Transform
-- We cleaned and organized the data into different features and bins, to train a deep learning model which then helped the reinforcement learning model perform better. 
-
-## Load
-- Data was collected and loaded into MongoDB Atlas via the website. Once it was transformed it was then loaded again into the deep learning model. 
-
-# Website Outline
-- Below is a representation of our process for filtering data and how our website logic might look.
-<p align="center">
-    <img src="https://github.com/hmmclean/Data-Visualization-Project_Project-3/blob/main/Assets/filter%20logic1.png" width="900">
-    </p> 
-<br>
-<br>
-
-- Below is the actual representation of our filtering process
-<p align="center">
-    <img src="https://github.com/hmmclean/Data-Visualization-Project_Project-3/blob/main/Assets/filter%20logic2.png" width="500">
-    </p>
-
-
-
-# Website Development
+# Game and Website Development
 
 ## WEBSITE Navigation 
 - Once data was JSONified wireframes were created to contain the main navigation wiring, content containers, map containers, headers and footers. A main page was created as well as a main CSS for implementing color, styling and event specific handling, such as mozilla neglect. Once the main page was created other pages were created and modified to fit the page requirements. Images were created and added at this point. Once the page was built, functionality was added to populate the dropdowns, return map logic, reset the page and navigate away from the page. Other functionality was built such as background_logic.js and popup_logic.js to handle non-page specific requirements. 
@@ -114,7 +86,34 @@ This project involved creating a website for a specific game, RPSLS, collecting 
 <p align="center">
     <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/data.PNG">
     </p>
-<br>
+<be>
+
+# Data Extraction, Transformation, and Loading
+## Extraction 
+- We pulled a csv from the website where the data was collected and stored using MongoDB Atlas.
+
+## Transform
+- Several parts of transformation included weighting rounds, creating a choice winner column, normalizing the round numbers. 
+
+## Load
+- The initial collection of the data from the RPSLS website pushed into our database. After it was downloaded from the database and transformed it was then loaded into the deep learning models.
+
+## Tableau 
+ADD INFORMATION
+
+
+# Modeling
+
+## Intro to Reinforcement Learning
+For the RPSLS game, the best type of modeling is reinforcement learning. We took on the task to learn RL modeling to use it with our data. 
+
+
+## Set Baseline
+To determine a baseline a deep learning model and RL model were made (RPSLS_DeepL_Model_Random_Actions and RPSLS_DQN_Model_Random). This allowed us to see how an agent would perform in a truly random environment. 
+SCREENSHOT OF BASELINE SLIDE
+
+## Optimization 
+
 
 # Project Role Overview
 - A summary of efforts for the RPSLS Project
@@ -129,28 +128,13 @@ This project involved creating a website for a specific game, RPSLS, collecting 
     * Deep Learning Modeling - Quentin O'Neal, Haylee McLean
     * Reinforcement Learning Modeling - Quentin O'Neal, Haylee McLean
 
-# Ethical Considerations
-- In the process of creating our website and visulizations, we attempted to create this project with the utmost consideration for both legal and ethical practices. Given the complexity of this project we took several steps to ensure that we did not infringe on either of these duplicitous practices. The steps we did to make sure our project was in compliance were:
-  
-     * We used the National Parks Service API to gather our data directly from the source.
-     * We did not use any web-scraping for any of the data related to our project.
-     * While we did use the National Parks Logo for our project, a disclaimer was added to protect the service mark and trademark of the rights to the logo, 
-       which belong to the NPS and are fully disclosed.
-     * All pictures were purchased through IStock.com or created from scratch.
-     * We also included a disclaimer that we were not officially affiliated with or endorsed by the National Parks Service on every page.
-     * Lastly since this is a school project, we are not seeking payment, selling, or merchandising this website, and have fully cited our sources and recognition of the true owners of the trademarks.
-     * Should we desire to implement this in the larger open public space, appropriate permission would be requested for the use of the NPS Arrowhead, service marks and any other pertinet trademarks. <https://www.nps.gov/subjects/partnerships/arrowhead-requests.htm#:~:text=The%20Arrowhead%20Symbol%20is%20the,Federal%20Regulations%20(36%20CFR)>
-
-       *"This website celebrates our National Parks, and the National Park Service logo is used in conjunction to call
-      attention to their service. This site is not officially affiliated with or endorsed by the National Park
-      Service. For official information, visit the National Park Service's website. All registered trademarks belong
-      to the National Park Service."*
- 
-
 
 # References and Resources
 * [Database system (MongoDB Atlas) for data storage](https://www.mongodb.com/atlas/database) 
-* Frontend development with HTML, CSS, and JavaScript.
+* Front end development with HTML, CSS, and JavaScript.
+* [Node.js] (https://www.w3schools.com/nodejs/)
+* [Cloud Node.js](https://cloud.google.com/nodejs/docs/)
+* Shakeeb Ashraf - I/O Project Advisor
 * Libraries for modeling.
      * [TensorFlow](https://www.tensorflow.org/) 
      * [Keras](https://keras.io/examples/rl/)
@@ -158,13 +142,3 @@ This project involved creating a website for a specific game, RPSLS, collecting 
      * [Building an Environment](https://gymnasium.farama.org/)
      * [Deep Q-Learning Research](https://towardsdatascience.com/self-learning-ai-agents-part-ii-deep-q-learning-b5ac60c3f47) 
 * [ChatGPT](https://chat.openai.com/)
-
-
-Website
-Node.js - https://www.w3schools.com/nodejs/
-	     - https://cloud.google.com/nodejs/docs/
-MongoDB Atlas - https://cloud.mongodb.com/
-Shakeeb Ashraf - I/O Project Advisor
- 
-General
-ChatGPT - https://chat.openai.com/
