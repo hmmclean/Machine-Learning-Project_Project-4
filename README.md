@@ -15,17 +15,28 @@ Our goal was to understand user behavior and potentially develop optimal strateg
 
 ## Thought Process
 
-TABLEAU LINK: https://public.tableau.com/app/profile/tia.scott/viz/RPSLSOverview/ComputerV_PlayerChoice?publish=yes
-
 - Below is a representation of our process from game creation, to data collection, to modeling. 
 <p align="center">
     <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thought_process.png">
     </p>
 
 ## Game Design and Website Development
+Given that this project relied on creating and compiling our own data and creating our own game, we knew that there were going to be a lot of factors that needed to be overcome quickly as well as several factors we had not initially thogught of to create our game. We knew initially that we needed to create a game that:
 
-### WEBSITE Navigation 
-- Once data was JSONified wireframes were created to contain the main navigation wiring, content containers, map containers, headers and footers. A main page was created as well as a main CSS for implementing color, styling and event specific handling, such as mozilla neglect. Once the main page was created other pages were created and modified to fit the page requirements. Images were created and added at this point. Once the page was built, functionality was added to populate the dropdowns, return map logic, reset the page and navigate away from the page. Other functionality was built such as background_logic.js and popup_logic.js to handle non-page specific requirements. 
+* Included Game Logic for determining a winner and handling the game execution
+* Provided Comprehensive Logging about the round, computer and player choice, and the winner of the round
+* Provided a way to have the game hosted somewhere and the ability to allow people to play anywhere and download all the instances of the game data
+
+In addition to those factors we also needed to consider that because this game is creating our own data we needed to elimiate as much player bias as possible. Given that players are challenged against a computer, we needed to ensure that the player felt as if the computer was on an even playing field with the user and also that the computer's decision was not being affected by the player. Several ways we achieved this was:
+
+* The appearance of two "human" hands playing against each other
+* The text "computer making a selection" dissapears around the same time as a player would choose, giving the illusion that the computer is deciding at the same time as the player
+* To eliminate the computer's influence from the player, separate scripts handle the computer and the player choice
+* In addition, while it appears that the computer chooses between 10 and 5 seconds, actually the computer has chosen it's hand at the round opening to avoid player inlfluence for the computer to win
+
+
+### Website Overview 
+The start of our project was to create a working RPSLS game and have the game perform specific actions that would create "bias mitigated" game data . Using html as the backbone for the game, CSS incorporates styles across the entire game for executing specific styles and animation keyframes. The "thinking" behind the game lies in javascripting which comprises several scripts that run asynchonously within the gameplay until the end of the round which then the scripts return to their pre-state and then run again.
 
 * ROOT>
     * index.html - Main landing page
@@ -37,15 +48,41 @@ TABLEAU LINK: https://public.tableau.com/app/profile/tia.scott/viz/RPSLSOverview
         * CSS Folder
            * styles.css - CSS styles for the index page
       * JS Folder
-           * auto_player_selection.js - Script that handles the auto selection for the player if they do not select within the 10 sec time allotment. 
-           * computer_textchoice.js - Script that handles 
-           * game_id.js - Script that creates a unique game ID for each game.
-           * game_logic.js - Script that runs the entire game. 
-           * player_choice.js - Script that 
-           * popup_logic.js - Script that 
-           * selection_prompt.js - Script that
-           * video_popup.js - Script that creates the video popup on the rules page. 
-           * vs_image.js - Script that
+           * auto_player_selection.js - Script that handles the auto selection for the player if they do not select by 1 second on the timer, selects a random hand
+           * computer_textchoice.js - Script that handles removing text that says "Computer is choosing a hand" at 5 seconds
+           * game_id.js - Script that creates a unique game ID for each game
+           * game_logic.js - Script that runs the entire game
+           * player_choice.js - Script that handles the selection of the button of the player choice and returns the correct animated hand
+           * selection_prompt.js - Script that handles the text "Make a Selection" once the player selects and icon
+           * video_popup.js - Script that creates the video popup on the rules page 
+           * vs_image.js - Script that shows the VS popup when the animation begins and the hands begin executing the animation
+           * winner_scoreboard.js - Script that determines the winner based on the selection of the hands and appends a score to the appropriate winner
+       
+
+### Game Logic, Player and Computer
+The start of our game the player will see a seamless design that allows them to pick a hand (with buttons) and have the action called via javascript and keyframe animation after countdown. The game was designed to make players “feel” like they are playing they are playing a “similar” opponent elicit real play responses. Inside the console the game is logging all the moves from both the player and the computer, as well as the rounds, winner, and a unique game id.
+
+* <IMAGE>
+
+While the player is experiencing a simulated game, in reality much of the game happens right at the round opening and closing. In rounds 1-3 the computer makes a choice right at the round opening to avoid influence from the player's hand. The round continues through until post 4 seconds, where the logging is not only logged to the console but is logged to our backend environment using Node.JS framework and middleware to make an API call to MongoDB Atlas. 
+
+In addition, in rounds 1-3 the computer is only randomly choosing a hand. This is due to the use of the N-gram method. The computer needs 3 rounds of data to begin to process what the next possible outcome would be at round 4. This method is carried through rounds 4-10 using the subsequent 3 rounds to simplify the decision for the computer. 
+
+* <IMAGE>
+
+
+### Logging and Input/Output Data Aggregation
+Inside the console the game is logging all the moves from both the player and the computer, as well as the rounds, winner, and a unique game id.
+
+* <IMAGE>
+
+In addition to the logging done in the console we also used an event-driven non-blocking I/O model. This method is basically listening for an event to happen in the game, and the model will run simultaneous scripts without waiting to another process to complete. Node.js is the heart of our game reporting and is assisting the flow of the program which is determined by events such as user actions. Node uses a loop to initiate and execute logging operations and in the instance of our game, Node is listening for the the annoucement of the round winner. Per the image below, there is a front-end to our game (the hosted website) and the back-end to our game (an evironment we created). Node.js is not technically in both environments, however the framework is assiting execution on both ends, but technically Node lives in our back-end. 
+
+The process starts from the logging in the RPSLS game, which an Express.JS script parses the JSON from the logging inside the game, and acts as middleware to handle the POST request from the API. In this instance the script is also handling tasks such as authentication and request processing. Once the request is authenticated the new documnet is then added to our MongoDB Altas (our noSQL, SQL cloud-based database) using a Mongoose schema.
+
+From the other side, when we request game data the process is similar. The middleware handles a GET request, validates a secret key, query game data from MongoDB, format it as CSV, and stream the file to the client for download.
+
+* <IMAGE>
 
 ## WEBSITE Survey
 #### Main index page
