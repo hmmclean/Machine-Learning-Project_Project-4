@@ -17,7 +17,7 @@ Our goal was to understand user behavior and potentially develop optimal strateg
 
 - Below is a representation of our process from game creation to data collection to modeling. 
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thoughtprocess.png">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thoughtprocess.png" width="500">
     </p>
 
 ## Game Design and Website Development
