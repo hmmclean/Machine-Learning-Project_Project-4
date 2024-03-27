@@ -17,7 +17,7 @@ Our goal was to understand user behavior and potentially develop optimal strateg
 
 - Below is a representation of our process from game creation to data collection to modeling. 
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thoughtprocess.png" height="200">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/thoughtprocess.png" width="500">
     </p>
 
 ## Game Design and Website Development
@@ -63,7 +63,7 @@ The start of our project was to create a working RPSLS game and have it perform 
 At the start of our game, the player will see a seamless design that allows them to pick a hand (with buttons) and have the action called via JavaScript and keyframe animation after the countdown. The game was designed to make players “feel” like they are playing a “similar” opponent and elicit real play responses. Inside the console, the game logs all the moves from the player and the computer, the rounds, the winner, and a unique game ID.
 
 <p align="center">
-    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/player%20perception.png" width="500">
+    <img src="https://github.com/hmmclean/Machine-Learning-Project_Project-4/blob/main/Assets/player%20perception.png" height="200">
     </p>
 
 While the player is experiencing a simulated game, in reality, much of the game happens right at the round opening and closing. In rounds 1-3, the computer chooses right at the round opening to avoid influence from the player's hand. The round continues until after 4 seconds when the logging is not only logged to the console but also to our backend environment using the Node.JS framework and middleware to make an API call to MongoDB Atlas. 
