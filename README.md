@@ -180,7 +180,7 @@ In the graphic below you can see that the random models are performing just abov
     * ReadMe - Haylee McLean
     * Data Cleaning - Quentin O'Neal
     * HTML/CSS/JavaScript - Tia Scott
-    * Web Hosting - Tia Scott
+    * Web Hosting & I/O Data Aggregation - Tia Scott
     * Deep Learning Modeling - Quentin O'Neal, Haylee McLean
     * Reinforcement Learning Modeling - Quentin O'Neal, Haylee McLean
 
