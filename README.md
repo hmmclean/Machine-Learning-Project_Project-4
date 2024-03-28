@@ -166,8 +166,10 @@ In the graphic below you can see that the random models are performing just abov
     </p>
 <br>
 
-## Additional Models and Optimization 
+## Models and Optimization 
+<b>For the more information about the Tensorflow KerasRL Modeling, environments, and optimizations, please review the information in the HMM_Modeling folder.</b>
 
+<b>For the more information about the Agents Tensorflow Modeling, environments, and optimizations, please review the information in the QPO_Modeling folder.</b>
 
 # Project Role Overview
 - A summary of efforts for the RPSLS Project
