@@ -8,8 +8,8 @@ Our goal was to understand user behavior and potentially develop optimal strateg
 ## Repo Navigation 
 * Assets - Images belonging to the repo
 * Game Resources - Preliminary files for cleaning and merging game data
-* HMM_Modeling - Folder containing jupyter notebooks for a deep learning model and RL model using an environment built with random choice and an RL model using an environment built with strategy
-* QPO_Modeling - Folder containing Tensorflow RL modeling code
+* HMM_Modeling - Folder containing Jupyter notebooks for a deep learning model and RL model using an environment built with random choice and an RL model using an environment built with strategy
+* QPO_Modeling - Folder containing CSV with data from our game, a Jupyter Notebook with initial data cleaning and neural network supervised learning model, and a Notebook with Reinforcement Learning environment. I also saved the neural network model as an H5 file for loading into the RL environment.
 * ROOT - HTML, JS, and CSS source documentation for our website - *This is only the front-end of our website*
 * Tableau - Tableau workbook of visualizations that came from original game data
 
